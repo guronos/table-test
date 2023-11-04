@@ -10,15 +10,40 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
+### RESPONSE AND COMMENTS
 ```
-npm run build
+{
+  "form_errors": null, // сообщение по логике используется с кодами более 400
+  "success_message": "Success", // сообщение по логике используется с кодами менее 400
+  "page_data": {
+    "data": [ // данные сущности
+      {
+        "iso_3166_1_a2": "RU", // ISO 3166-1 alpha-2 — двубуквенные коды государств и зависимых территорий стандарта ISO 3166
+        "iso_3166_1_a3": "RUS", // ISO 3166-1 alpha-3 — трёхбуквенные коды государств и зависимых территорий стандарта ISO 3166
+        "iso_3166_1_numeric": "643", // ISO 3166-1 numeric — цифровые коды государств и зависимых территорий стандарта ISO 3166
+        "printable_name": "Russian Federation", // отображаемое наименование страны, вероятно должно быть локализуемым
+        "name": "", // вероятно должно быть полное название страны
+        "display_order": 0, // вероятно кол-во товаров для отображения
+        "is_shipping_country": false // вероятно флаг возможности доставки в данную страну
+      }
+    ],
+    "rpag": { // навигационные данные
+      "has_next": false, // вероятно флаг для отображения UI-стрелки далее (есть ли след. страница с данными)
+      "has_previous": false, // вероятно флаг для отображения UI-стрелки назад (есть ли пред. страница с данными)
+      "has_other_pages": false, // другие страницы, за исключением текущей, next, previous
+      "next_page_number": null, // номер след страницы для фильтра и UI
+      "previous_page_number": null, // номер пред страницы для фильтра и UI
+      "start_index": 1, // номер первой станицы
+      "end_index": 1, // номер первой станицы последней цтраницы
+      "total_count": 249, //всего записаей
+      "selected_count": 1, // текущая страница
+      "pages": 1 // всего страниц
+    }
+  },
+  "redirect": "", // адрес переадресеции
+  "exc_stack": "",
+  "debug": [], // неясный массив для отладки
+  "user_groups": "", // вероятно группы доступа
+  "user_perms": "" // вероятно авторизация
+}
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
